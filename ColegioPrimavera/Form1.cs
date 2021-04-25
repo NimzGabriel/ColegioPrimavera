@@ -36,13 +36,10 @@ namespace ColegioPrimavera
 
             List<Profesore> profesores = bd.Profesores.Where(profesor => profesor.idProfesor == cursoSelec.idProfesor).ToList();
 
-            string nombreProfesor = profesores.FirstOrDefault(profe => profe.idProfesor == cursoSelec.idProfesor).nombre.ToString();
-
             textBox1.ReadOnly = true;
-            textBox1.Text = nombreProfesor;
+            textBox1.Text = cursoSelec.Profesore.nombre;
 
             dataGridView1.DataSource = alumnos;
-
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Visible = false;
